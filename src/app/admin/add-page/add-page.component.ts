@@ -26,12 +26,12 @@ export class AddPageComponent implements OnInit {
       photo: new FormControl(null, Validators.required),
       information: new FormControl(null, Validators.required),
       price: new FormControl(null, Validators.required),
-    })
+    });
   }
 
   submit() {
     if (this.form.invalid) {
-      return
+      return;
     }
     this.submitted = true;
 
@@ -48,7 +48,7 @@ export class AddPageComponent implements OnInit {
     this.productServ.create(product).subscribe(res => {
       this.form.reset();
       this.submitted = false;
-      this.router.navigate(['/'])
-    })
+      this.router.navigate(['/']);
+    });
   }
 }

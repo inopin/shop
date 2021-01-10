@@ -21,9 +21,9 @@ export class ProductComponent implements OnInit {
   ngOnInit(): void {
     this.product$ = this.route.params
       .pipe(switchMap(params => {
-        return this.productServ.getById(params['id'])
+        return this.productServ.getById(params.id);
       }));
-console.log(this.product$)
+    console.log(this.product$);
   }
 
 }

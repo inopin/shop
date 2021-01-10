@@ -22,12 +22,12 @@ export class LoginPageComponent implements OnInit {
     this.form = new FormGroup({
       email: new FormControl(null, [Validators.required, Validators.email]),
       password: new FormControl(null, [Validators.required, Validators.minLength(6)]),
-    })
+    });
   }
 
   submit() {
     if (this.form.invalid) {
-      return
+      return;
     }
     this.submitted = true;
 
@@ -38,15 +38,14 @@ export class LoginPageComponent implements OnInit {
     };
 
     this.auth.login(user).subscribe(res => {
-      console.log(res);
-      this.form.reset,
-      this.router.navigate(['/admin', 'dashbord']);
-      this.submitted = false
-    },() => {
+        console.log(res);
+        this.form.reset;
+        this.router.navigate(['/admin', 'dashbord']);
+        this.submitted = false;
+      }, () => {
         this.submitted = false;
       }
-
-      )
+    );
   }
 
 }

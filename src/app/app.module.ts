@@ -20,6 +20,7 @@ import { ProductItemComponent } from './product-item/product-item.component';
     ProductComponent,
     CardPageComponent,
     ProductItemComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -30,10 +31,13 @@ import { ProductItemComponent } from './product-item/product-item.component';
   providers: [
     {
       provide: HTTP_INTERCEPTORS,
-      multi:true,
+      multi: true,
       useClass: AuthInterceptor
     }
   ],
+  exports: [
+  ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}

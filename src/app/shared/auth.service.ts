@@ -15,7 +15,7 @@ export class AuthService {
     return this.http.post(`https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=${environment.apiKey}`, User)
       .pipe(
         tap(this.setToken)
-      )
+      );
   }
 
   private setToken(response) {
@@ -25,7 +25,7 @@ export class AuthService {
       localStorage.setItem('fb-token-exp', expData.toString());
       localStorage.setItem('fb-token', response.idToken);
     } else {
-      localStorage.clear()
+      localStorage.clear();
     }
 
   }
@@ -35,17 +35,17 @@ export class AuthService {
 
     if (new Date > expDate) {
       this.logout();
-      return null
+      return null;
     }
-    return localStorage.getItem('fb-token')
+    return localStorage.getItem('fb-token');
   }
 
   logout() {
-    this.setToken(null)
+    this.setToken(null);
   }
 
   isAuthenticated() {
-    return !!this.token
+    return !!this.token;
   }
 }
 

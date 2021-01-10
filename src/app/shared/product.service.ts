@@ -20,8 +20,8 @@ export class ProductService {
           ...product,
           id: res.name,
           date: new Date(product.date)
-        }
-      }))
+        };
+      }));
   }
 
   getAll() {
@@ -32,26 +32,26 @@ export class ProductService {
             ...res[key],
             id: key,
             date: new Date(res[key].date)
-          }))
-      }))
+          }));
+      }));
   }
 
   getById(id) {
-    return this.http.get(`${environment.fbDbUrl}/product/${id}.json`)
+    return this.http.get(`${environment.fbDbUrl}/products/${id}.json`)
       .pipe(map((res: Product) => {
         return {
           ...res,
           id,
           date: new Date(res.date)
-        }
-      }))
+        };
+      }));
   }
 
   remove(id) {
-    return this.http.delete(`${environment.fbDbUrl}/product/${id}.json`)
+    return this.http.delete(`${environment.fbDbUrl}/products/${id}.json`);
   }
 
   upDate(product: Product) {
-    return this.http.patch(`${environment.fbDbUrl}/product/${product.id}.json`, product)
+    return this.http.patch(`${environment.fbDbUrl}/products/${product.id}.json`, product);
   }
 }

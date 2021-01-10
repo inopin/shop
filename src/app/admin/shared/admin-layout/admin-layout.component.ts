@@ -21,7 +21,7 @@ export class AdminLayoutComponent implements OnInit {
   out($event) {
     event.preventDefault();
     this.auth.logout();
-    this.router.navigate(['/admin', 'login'])
+    this.router.navigate(['/admin', 'login']);
   }
 
 }
