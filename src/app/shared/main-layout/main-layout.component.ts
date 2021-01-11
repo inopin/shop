@@ -30,7 +30,6 @@ export class MainLayoutComponent implements OnInit {
       });
 
       this.productServ.setType(this.type);
-      console.log(this.type)
     }
 
   }

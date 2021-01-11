@@ -23,7 +23,6 @@ export class ProductComponent implements OnInit {
       .pipe(switchMap(params => {
         return this.productServ.getById(params.id);
       }));
-    console.log(this.product$);
   }
 
   addProduct(product) {
