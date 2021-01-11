@@ -6,5 +6,5 @@
   <h2>price: {{product.price}} $</h2>
   <quill-view-html [content]="product.information"></quill-view-html>
   <button [routerLink]="['/product', product.id]" class="btn btn-dark">Open</button>
-  <button [routerLink]="['/card']" class="btn btn-dark">Add to Card</button>
+  <button [routerLink]="['/card']" class="btn btn-dark" (click)="addProduct(product)">Add to Card</button>
 </div>

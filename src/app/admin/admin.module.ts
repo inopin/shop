@@ -10,7 +10,6 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { AuthGuard } from '../shared/auth.guard';
 import { QuillModule } from 'ngx-quill';
-import { AppModule } from '../app.module';
 import { SearchPipe } from '../shared/search.pipe';
 
 @NgModule({
@@ -40,7 +39,6 @@ import { SearchPipe } from '../shared/search.pipe';
         ]
       }
     ]),
-    // AppModule,
   ],
   exports: [RouterModule]
 })

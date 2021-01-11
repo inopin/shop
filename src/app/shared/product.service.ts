@@ -10,6 +10,9 @@ import { FbResponse, Product } from './interfaces';
 })
 export class ProductService {
 
+  type = 'phone';
+  cartProducts: Product[] = [];
+
   constructor(private  http: HttpClient) {
   }
 
@@ -53,5 +56,13 @@ export class ProductService {
 
   upDate(product: Product) {
     return this.http.patch(`${environment.fbDbUrl}/products/${product.id}.json`, product);
+  }
+
+  setType(type) {
+    this.type = type;
+  }
+
+  addProduct(product) {
+    this.cartProducts.push(product)
   }
 }
